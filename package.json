@@ -12,7 +12,6 @@
     "build": "yarn task check-libs-integrity && forge build",
     "clean": "forge clean",
     "test": "yarn task check-libs-integrity && env $(echo $(cat .env.defaults && echo && cat .env) | xargs) forge test",
-    "test:shanghai": "FOUNDRY_PROFILE=shanghai yarn test",
     "gen": "npx hardhat generate",
     "coverage": "forge coverage --ir-minimum",
     "remappings": "forge remappings > remappings.txt",
@@ -25,7 +24,6 @@
     "task": "hardhat"
   },
   "devDependencies": {
-    "@layerzerolabs/scan-client": "^0.0.6",
     "@nomicfoundation/hardhat-foundry": "^1.0.1",
     "@nomiclabs/hardhat-ethers": "^2.2.3",
     "axios": "^1.4.0",
@@ -42,23 +40,39 @@
   "libs": {
     "forge-std": {
       "url": "https://github.com/foundry-rs/forge-std",
-      "commit": "d44c4fbbb9ff054fb334babbdd34f9b6e899b3d6"
+      "commit": "52715a217dc51d0de15877878ab8213f6cbbbab5"
     },
-    "openzeppelin-contracts": {
+    "openzeppelin": {
       "url": "https://github.com/OpenZeppelin/openzeppelin-contracts",
-      "commit": "e50c24f5839db17f46991478384bfda14acfb830"
+      "commit": "d947fb056d6a7eb099013076ac5ea5a69e9fec06"
     },
-    "solmate": {
-      "url": "https://github.com/transmissions11/solmate",
-      "commit": "bfc9c25865a274a7827fea5abf6e4fb64fc64e6c"
+    "solidity-bytes-utils": {
+      "url": "https://github.com/GNSPS/solidity-bytes-utils",
+      "commit": "df88556cbbc267b33a787a3a6eaa32fd7247b589"
+    },
+    "layerzerolabs/lz-evm-oapp-v2": {
+      "url": "https://registry.npmjs.org/@layerzerolabs/lz-evm-oapp-v2/-/lz-evm-oapp-v2-2.3.12.tgz",
+      "type": "tgz"
+    },
+    "layerzerolabs/lz-evm-messagelib-v2": {
+      "url": "https://registry.npmjs.org/@layerzerolabs/lz-evm-messagelib-v2/-/lz-evm-messagelib-v2-2.3.12.tgz",
+      "type": "tgz"
+    },
+    "layerzerolabs/lz-evm-protocol-v2": {
+      "url": "https://registry.npmjs.org/@layerzerolabs/lz-evm-protocol-v2/-/lz-evm-protocol-v2-2.3.12.tgz",
+      "type": "tgz"
+    },    
+    "forge-deploy": {
+      "url": "https://github.com/Abracadabra-money/forge-deploy",
+      "commit": "0c02a1005bae8f995519c88126e8593e697b8062"
     },
     "solady": {
       "url": "https://github.com/Vectorized/solady",
       "commit": "50cbe1909e773b7e4ba76049c75a203e626d55ba"
     },
-    "forge-deploy": {
-      "url": "https://github.com/Abracadabra-money/forge-deploy",
-      "commit": "0c02a1005bae8f995519c88126e8593e697b8062"
+    "solmate": {
+      "url": "https://github.com/transmissions11/solmate",
+      "commit": "bfc9c25865a274a7827fea5abf6e4fb64fc64e6c"
     }
   }
 }

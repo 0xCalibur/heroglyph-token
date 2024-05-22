@@ -1,6 +1,6 @@
 [profile.default]
-solc_version = "0.8.20"
-evm_version = "paris" # switch to shanghai once it's supported on L2
+solc_version = "0.8.26"
+evm_version = "shanghai"
 auto_detect_solc = false
 optimizer = true
 optimizer_runs = 800 # fails at 1_000 because certain contracts become too large
@@ -11,15 +11,18 @@ verbosity = 1
 via_ir = false
 remappings = [
     '/=src',
-    "openzeppelin-contracts/=lib/openzeppelin-contracts/contracts",
     'ds-test/=lib/forge-std/lib/ds-test/src/',
     'forge-std/=lib/forge-std/src/',
-    'solmate/=lib/solmate/src/',
-    'libraries/=src/libraries',
-    'interfaces/=src/interfaces',
-    'mixins/=src/mixins',
+    'forge-deploy/=lib/forge-deploy/contracts',
+    "@layerzerolabs/lz-evm-oapp-v2/=lib/layerzerolabs/lz-evm-oapp-v2/package",
+    "@layerzerolabs/lz-evm-messagelib-v2/=lib/layerzerolabs/lz-evm-messagelib-v2/package",
+    "@layerzerolabs/lz-evm-protocol-v2/=lib/layerzerolabs/lz-evm-protocol-v2/package",
+    "@openzeppelin/=lib/openzeppelin/",
+    "openzeppelin-contracts/=lib/openzeppelin/contracts",
+    'solidity-bytes-utils/=lib/solidity-bytes-utils/',
     'solady/=lib/solady/src/',
-    'forge-deploy/=lib/forge-deploy/contracts'
+    'mixins/=src/mixins',
+    'solmate/=lib/solmate/src/'
 ]
 auto_detect_remappings = false
 match-path = "test/**/*.t.sol"
@@ -30,10 +33,6 @@ fs_permissions = [
     { access = "read", path = "./out" },
     { access = "read", path = "./config" },
 ]
-
-[profile.shanghai]
-evm_version = "shanghai"
-match-path = "test/**/*.t.shanghai.sol"
 
 [profile.ci]
 verbosity = 4
