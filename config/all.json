@@ -1,5 +1,6 @@
 {
     "addresses": [
-        { "key": "create3Factory", "value": "0x6df7bf308ABaf673f38Db316ECc97b988CE1Ca78" }
+        { "key": "create3Factory", "value": "0x6df7bf308ABaf673f38Db316ECc97b988CE1Ca78" },
+        { "key": "safe", "value": "0x49d9dd1a2fa30fc92b4512fe02d107ba831b69d8" }
     ]
 }
